@@ -5,7 +5,6 @@ import {
   ClipboardList,
   FileText,
   BookOpen,
-  PlusCircle,
   Bell,
   ShieldCheck,
 } from 'lucide-react';
@@ -33,12 +32,6 @@ export function Layout() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link
-            to="/requests/new"
-            className="hidden sm:inline-flex items-center gap-2 bg-[#ffeb00] text-[#191919] px-4 py-1.5 rounded-lg text-sm font-bold hover:brightness-95 transition-all"
-          >
-            <PlusCircle className="w-4 h-4" />새 검토 요청
-          </Link>
           <button
             type="button"
             className="p-2 rounded-lg hover:bg-white/10 transition-colors"

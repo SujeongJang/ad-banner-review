@@ -66,7 +66,7 @@ export function PolicyManagement() {
             className="btn-yellow inline-flex items-center gap-1.5"
           >
             <Plus className="w-4 h-4" />
-            변경 제안
+            정책 등록
           </button>
         </div>
       </div>
@@ -438,15 +438,14 @@ function ApprovalModal({
 function PolicyDetailDrawer({
   policy,
   onClose,
-  onPropose,
 }: {
   policy: Policy;
   onClose: () => void;
   onPropose: () => void;
 }) {
   return (
-    <div className="fixed inset-0 z-40 bg-black/40 flex justify-end">
-      <aside className="bg-white w-full max-w-xl h-full overflow-y-auto p-6">
+    <div className="fixed inset-0 top-14 z-40 bg-black/40 flex justify-end">
+      <aside className="bg-white w-full max-w-xl h-[calc(100vh-3.5rem)] overflow-y-auto p-6">
         <div className="flex items-start justify-between mb-4">
           <div>
             <div className="text-xs font-mono text-slate-400">{policy.id}</div>
@@ -490,9 +489,6 @@ function PolicyDetailDrawer({
         <div className="flex gap-2 mt-6 sticky bottom-0 bg-white pt-4 border-t border-slate-100">
           <button type="button" onClick={onClose} className="btn-secondary">
             닫기
-          </button>
-          <button type="button" onClick={onPropose} className="btn-yellow">
-            변경 제안
           </button>
         </div>
       </aside>
