@@ -15,6 +15,7 @@ import {
   FileText,
   Image as ImageIcon,
   Video,
+  PlusCircle,
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { dummyReviews } from '../data/reviews';
@@ -75,26 +76,36 @@ export function ReviewList() {
             전사 검토 건(전체) 또는 본인 요청·배정 건(MY)을 확인하고 상세 레이어로 이동합니다.
           </p>
         </div>
-        <div className="inline-flex items-center bg-white border border-slate-200 rounded-lg p-1 gap-1">
+        <div className="flex items-center gap-3">
+          <div className="inline-flex items-center bg-white border border-slate-200 rounded-lg p-1 gap-1">
+            <button
+              type="button"
+              onClick={() => navigate('/reviews')}
+              className={cn(
+                'text-sm font-semibold px-4 py-1.5 rounded-md transition-colors',
+                !isMyTab ? 'bg-[#212d3d] text-white' : 'text-slate-500 hover:bg-slate-50',
+              )}
+            >
+              전체
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate('/reviews/my')}
+              className={cn(
+                'text-sm font-semibold px-4 py-1.5 rounded-md transition-colors',
+                isMyTab ? 'bg-[#212d3d] text-white' : 'text-slate-500 hover:bg-slate-50',
+              )}
+            >
+              MY
+            </button>
+          </div>
           <button
             type="button"
-            onClick={() => navigate('/reviews')}
-            className={cn(
-              'text-sm font-semibold px-4 py-1.5 rounded-md transition-colors',
-              !isMyTab ? 'bg-[#212d3d] text-white' : 'text-slate-500 hover:bg-slate-50',
-            )}
+            onClick={() => navigate('/requests/new')}
+            className="btn-yellow inline-flex items-center gap-1.5"
           >
-            전체
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate('/reviews/my')}
-            className={cn(
-              'text-sm font-semibold px-4 py-1.5 rounded-md transition-colors',
-              isMyTab ? 'bg-[#212d3d] text-white' : 'text-slate-500 hover:bg-slate-50',
-            )}
-          >
-            MY
+            <PlusCircle className="w-4 h-4" aria-hidden="true" />
+            검토 요청
           </button>
         </div>
       </div>
