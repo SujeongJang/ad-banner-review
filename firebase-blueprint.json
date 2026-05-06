@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "ReviewRequest": {
+      "title": "Review Request",
+      "description": "Ad/Banner review request entity",
+      "type": "object",
+      "properties": {
+        "applicantId": { "type": "string" },
+        "applicantName": { "type": "string" },
+        "department": { "type": "string" },
+        "campaignName": { "type": "string" },
+        "materialType": { "type": "string" },
+        "channels": { "type": "array" },
+        "status": { "type": "string" },
+        "riskLevel": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["applicantId", "campaignName", "status"]
+    },
+    "Policy": {
+      "title": "Policy",
+      "description": "Compliance policy or guide document",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "version": { "type": "string" },
+        "category": { "type": "string" },
+        "effectiveDate": { "type": "string", "format": "date-time" },
+        "status": { "type": "string" }
+      },
+      "required": ["title", "version", "category", "status"]
+    }
+  },
+  "firestore": {
+    "/reviews/{requestId}": {
+      "schema": "ReviewRequest",
+      "description": "Collection of review requests"
+    },
+    "/policies/{policyId}": {
+      "schema": "Policy",
+      "description": "Collection of policies and guides"
+    }
+  }
+}

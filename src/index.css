@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo",
+    "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* KakaoPay design tokens (design.md) */
+  --color-pay-yellow: #ffeb00;
+  --color-pay-yellow-soft: #fff7a8;
+  --color-pay-dark: #212d3d;
+  --color-pay-dark-soft: #2f3d52;
+  --color-text-primary: #191919;
+  --color-text-secondary: #767676;
+  --color-bg-light: #f2f4f7;
+}
+
+@layer base {
+  html,
+  body {
+    font-feature-settings: "ss03", "tnum" on;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-[#f2f4f7] text-[#191919] font-sans;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-slate-200 rounded-xl shadow-[0_1px_2px_rgba(33,45,61,0.04)];
+  }
+
+  .btn-primary {
+    @apply bg-[#212d3d] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#2f3d52] transition-colors disabled:opacity-50;
+  }
+
+  .btn-yellow {
+    @apply bg-[#ffeb00] text-[#191919] px-4 py-2 rounded-lg font-bold hover:brightness-95 transition-all disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-slate-200 text-[#191919] px-4 py-2 rounded-lg font-semibold hover:bg-slate-50 transition-colors;
+  }
+
+  .btn-ghost {
+    @apply text-slate-600 hover:bg-slate-100 px-3 py-2 rounded-lg font-medium transition-colors;
+  }
+
+  .input {
+    @apply w-full bg-white border border-slate-200 rounded-lg px-3 py-2 text-sm
+      focus:outline-none focus:ring-2 focus:ring-[#ffeb00] disabled:bg-[#f2f4f7] disabled:cursor-not-allowed;
+  }
+}
