@@ -25,9 +25,6 @@ export function Layout() {
               <ShieldCheck className="text-[#212d3d] w-4 h-4" />
             </span>
             <span className="text-base font-bold tracking-tight">광고/배너 검토 어드민</span>
-            <span className="ml-2 text-xs font-medium text-white/50 hidden md:inline">
-              KakaoPay Securities
-            </span>
           </Link>
         </div>
 
